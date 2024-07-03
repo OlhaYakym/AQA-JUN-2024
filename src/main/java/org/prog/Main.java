@@ -18,9 +18,10 @@ public class Main {
         car2.goTo(10);
         paintItRed(car2);
         car2.goTo(118);
+
     }
 
-    public static void paintItRed(Car carToPaint) {
+       public static void paintItRed(Car carToPaint) {
         carToPaint.color = "Red";
     }
 
