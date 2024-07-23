@@ -19,9 +19,12 @@ public class Main {
         paintItRed(car2);
         car2.goTo(118);
 
+        System.out.println("Final mileage for car1: " + car1.getMileage());
+        System.out.println("Final mileage for car2: " + car2.getMileage());
+        System.out.println("Final mileage for car3: " + car3.getMileage());
     }
 
-       public static void paintItRed(Car carToPaint) {
+    public static void paintItRed(Car carToPaint) {
         carToPaint.color = "Red";
     }
 

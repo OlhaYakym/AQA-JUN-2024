@@ -3,15 +3,16 @@ package org.prog;
 public class Car {
 
     public String color;
-    public int mileage = 0;
-    public int sum = 0;
+    private int mileage = 10; // Initial mileage set to 10
 
-    // TODO: add parameter that indicates distance car travels
+
     public void goTo(int distance) {
-        mileage += 10;
-        sum +=distance;
+        mileage += distance;
         System.out.println(color + " car goes somewhere!");
-        System.out.println(color + " car current milage is now " + mileage);
-        System.out.println(color + " car has traveled a total of miles - " + sum);
+        System.out.println(color + " car current mileage is now " + mileage);
+    }
+
+    public int getMileage() {
+        return mileage;
     }
 }
