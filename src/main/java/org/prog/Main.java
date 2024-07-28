@@ -2,52 +2,43 @@ package org.prog;
 
 public class Main {
 
+    /**
+     * #############################################
+     * #############################################
+     * #############################################
+     * ############[Car : car1 | color:Red]#########
+     * #############################################
+     * #############################################
+     * #############################################
+     * #############################################
+     * #############################################
+     * ###[Car : car2 | color:Blue]#################
+     * ############################10###############
+     *
+     * @param args
+     */
+
+
     public static void main(String[] args) {
+        Car car1 = new Car();
+        Car car2 = new Car();
+        Car car3 = new Car();
 
-        Car redCar = new Car();
-        redCar.setColor("Red");
+        car1.color = "Red";
+        car2.color = "Yellow";
 
-        Car blueCar = new Car();
-        blueCar.setColor("Blue");
-
-        Car greenCar = new Car();
-        greenCar.setColor("Green");
-
-        Car yellowCar = new Car();
-        yellowCar.setColor("Yellow");
-
-
-        redCar.addMileage(475);
-        redCar.goTo("Odessa");
-
-        blueCar.addMileage(480);
-        blueCar.goTo("Kharkiv");
-
-        greenCar.addMileage(400);
-        greenCar.goTo("Ternopil");
-
-        yellowCar.addMileage(540);
-        yellowCar.goTo("Lviv");
-
-        System.out.println("redCar equals blueCar: " + redCar.equals(blueCar)); // Должно быть false
-        System.out.println("redCar equals greenCar: " + redCar.equals(greenCar)); // Должно быть false
-        System.out.println("redCar equals yellowCar: " + redCar.equals(yellowCar)); // Должно быть false
-        System.out.println("blueCar equals greenCar: " + blueCar.equals(greenCar)); // Должно быть false
-        System.out.println("blueCar equals yellowCar: " + blueCar.equals(yellowCar)); // Должно быть false
-        System.out.println("greenCar equals yellowCar: " + greenCar.equals(yellowCar)); // Должно быть false
-
-        System.out.println("Comparing cars by color:");
-        System.out.println("redCar color equals blueCar color: " + redCar.getColor().equals(blueCar.getColor()));
-        System.out.println("redCar color equals greenCar color: " + redCar.getColor().equals(greenCar.getColor()));
-        System.out.println("redCar color equals yellowCar color: " + redCar.getColor().equals(yellowCar.getColor()));
-        System.out.println("blueCar color equals greenCar color: " + blueCar.getColor().equals(greenCar.getColor()));
-        System.out.println("blueCar color equals yellowCar color: " + blueCar.getColor().equals(yellowCar.getColor()));
-        System.out.println("greenCar color equals yellowCar color: " + greenCar.getColor().equals(yellowCar.getColor()));
+        car1.goTo();
+        paintItBlack(car1);
+        car1.goTo();
     }
 
-    public static void transport(ITransport iTransport) {
-        iTransport.goTo();
-        iTransport.turn("left");
-        iTransport.turn("right");
+    public static void paintItBlack(Car carToPaint) {
+        carToPaint.color = "Black";
+    }
+
+    public static void increment(int i) {
+        System.out.println(">>" + i);
+        i = i + 100;
+        System.out.println(">>" + i);
     }
 }
