@@ -3,24 +3,11 @@ package org.prog;
 public class Car implements ITransport {
 
     private String color;
-    public int milage = 0;
+    private int mileage = 0;
 
     public void goTo() {
-        milage += 10;
-        goTo("somewhere");
-    }
-
-    public void goTo(String destination) {
-        goTo("current city", destination);
-    }
-
-    public void goTo(String from, String destination) {
-        goTo(from, destination, "nowhere");
-    }
-
-    public void goTo(String from, String destination, String passingThrough) {
-        System.out.println("Car is going from " + from + " to "
-                + destination + " stopping at " + passingThrough);
+        mileage += 10;
+        System.out.println("Car goes somewhere");
     }
 
     public void turn(String direction) {
@@ -35,5 +22,18 @@ public class Car implements ITransport {
 
     public String getColor() {
         return color;
+    }
+
+    public int getMileage() {
+        return mileage;
+    }
+
+    public void addMileage(int additionalMileage) {
+        mileage += additionalMileage;
+    }
+
+    @Override
+    public void stopAt(String stop) {
+        System.out.println("Car stops at " + stop);
     }
 }

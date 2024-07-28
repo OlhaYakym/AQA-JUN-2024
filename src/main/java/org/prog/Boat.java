@@ -12,4 +12,9 @@ public class Boat implements ITransport {
     public void setSail() {
         System.out.println("Set sail!");
     }
+
+    @Override
+    public void stopAt(String stop) {
+        System.out.println("Boat stops at " + stop);
+    }
 }
