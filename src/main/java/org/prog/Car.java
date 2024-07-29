@@ -3,15 +3,14 @@ package org.prog;
 public class Car implements ITransport {
 
     private String color;
-    public int milage = 0;
+    private int mileage = 0;
 
     public void goTo() {
-        milage += 10;
-        goTo("somewhere");
+        goTo("current location", "somewhere", "nowhere");
     }
 
     public void goTo(String destination) {
-        goTo("current city", destination);
+        goTo("current location", destination, "nowhere");
     }
 
     public void goTo(String from, String destination) {
@@ -19,16 +18,17 @@ public class Car implements ITransport {
     }
 
     public void goTo(String from, String destination, String passingThrough) {
+        mileage += 10; // Increment mileage when the car goes anywhere
         System.out.println("Car is going from " + from + " to "
                 + destination + " stopping at " + passingThrough);
     }
 
     public void turn(String direction) {
-        System.out.println(color + " car turns " + direction);
+        System.out.println((color != null ? color : "A") + " car turns " + direction);
     }
 
     public void setColor(String newColor) {
-        if (newColor != null) {
+        if (newColor != null && !newColor.trim().isEmpty()) {
             color = newColor;
         }
     }
