@@ -1,9 +1,10 @@
-Feature: HW 9
+Feature: Phone Search on Allo
 
-#  Scenario: phone search
-#  1. go to allo ua page
-#  2. search for phone
-#  3. check if this phone is present in DB
-#  4.1. If phone IS in DB > check its price, if it changed > update price and fail test
-#  4.2. If phone IS NOT in DB > store price, and fail test
-#  MAKE IT PARAMETRZIED FOR 3 DIFFERENT PHONES: iPhone, Samsung, Xiaomi
+  Scenario: phone search
+    Given "iPhone" as "phone"
+    Given "50000" as "price"
+    Given I load allo page
+    Given I take value from "phone" and send it to allo search
+    When I perform search
+    Then I check if phone "phone" is in db and if price is changed I update good price with "price"
+    And if phone is not in db I insert good "phone" and I insert good "price" into db

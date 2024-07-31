@@ -25,7 +25,7 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
     @BeforeSuite
     public void init() {
         driver = WedDriverFactory.getDriver();
-        WebSteps.googlePage = new GooglePage(driver);
+        WebSteps.alloPage = new org.prog.page.AlloPage(driver);
     }
 
     @BeforeMethod
